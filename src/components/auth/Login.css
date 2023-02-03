@@ -95,3 +95,12 @@
     width: 200px;
     height: 20px;
   }
+
+  .form-control2{
+    border-radius: 8px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px;
+    width: 225px;
+    height: 20px;
+  }

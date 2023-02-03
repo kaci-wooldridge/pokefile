@@ -65,3 +65,36 @@
     top: 0;
     border-radius: 10px;
   }
+
+  #changeName-form{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:350px;  /* adjust as per your needs */
+    height:100px;   /* adjust as per your needs */
+    margin-left:-200px;   /* negative half of width above */
+    margin-top:-200px;   /* negative half of height above */
+    background-color: white;
+    z-index: 1;
+  }
+
+  .changeName-button{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .name-form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: #c5bae4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
+    padding: 10px;
+    height: 200%;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    font-size: 19px;
+    border-radius: 8px;
+    border: 0px;
+  }

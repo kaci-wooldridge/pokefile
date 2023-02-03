@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-
 import "./Profile.css"
 
 export const Profile = () => {
     const navigate = useNavigate()
     const [user, setUser] = useState([""])
+    const [profileId, setProfileId] = useState([""])
     const [pokemonPicks, setPokemonPicks] = useState([""])
+    const [isName, setIsName] = useState("")
     const [pokemon, setPokemon] = useState([""])
     const localPokeUser = localStorage.getItem("pokefile_user")
     const pokeUserObject = JSON.parse(localPokeUser)
+
+    const [findId, setFindId] = useState([])
 
     useEffect(() =>{
         fetch(`http://localhost:8088/users?id=${pokeUserObject.id}&_expand=team`)
@@ -42,7 +45,6 @@ export const Profile = () => {
                 })
         })
     }, [])
-
 
     const handleClick = (evt) =>{
         const match = pokemonPicks.filter(poke => poke.pokemonId===parseInt(evt.target.id))
@@ -77,9 +79,6 @@ export const Profile = () => {
         }
     }
 
-
-
-
     return <div className="profile-container">
                 <div className="header">
                     <h1>{user[0].name}</h1>
@@ -93,6 +92,7 @@ export const Profile = () => {
                     {user[0].aboutMe}
                     </div>
                 </div>
+
                 <div className="myPokemon">
                     <h2>My Pokemon</h2>
                         <div className='pokemon-container'>
@@ -100,7 +100,7 @@ export const Profile = () => {
                                 return (  
                                     <div
                                         className='pokemon'
-                                        key={`${pokemonObj.id}`}
+                                        key={`${Math.floor(Math.random() * 1000)}-${pokeUserObject.id}`}
                                     >
                                         <div className='pokemon-sprite'>
                                             <img src={pokemonObj.image} />
@@ -111,15 +111,10 @@ export const Profile = () => {
                                         <div className='pokemon-type'>
                                             type: {pokemonObj.type}
                                         </div>
-                                        <div className="button">
-                                            <button className="button-85">
+                                        <div className="buttons">
+                                            {/* <button className="button-85">
                                             ❤︎
-                                            </button>
-                                        </div>
-                                        <div>
-                                            {default}
-                                        </div>
-                                        <div className='button'>
+                                            </button> */}
                                             <button className='button-85' role="button" id={pokemonObj.id}
                                                 onClick={(event) =>{
                                                     handleClick(event)
