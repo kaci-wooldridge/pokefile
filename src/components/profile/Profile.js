@@ -6,7 +6,7 @@ export const Profile = () => {
     const navigate = useNavigate()
     const [user, setUser] = useState([""])
     const [profileId, setProfileId] = useState([""])
-    const [pokemonPicks, setPokemonPicks] = useState([""])
+    const [pokemonPicks, setPokemonPicks] = useState([])
     const [isName, setIsName] = useState("")
     const [pokemon, setPokemon] = useState([""])
     const localPokeUser = localStorage.getItem("pokefile_user")
