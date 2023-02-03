@@ -22,29 +22,57 @@ export const Profile = () => {
         })}
     ,[])
 
-    useEffect(() =>{
-        const promises = []
+    // useEffect(() =>{
+    //     const promises = []
+    //     fetch(`http://localhost:8088/pokemonPicks?userId=${pokeUserObject.id}`)
+    //     .then(res => res.json())
+    //     .then ((data) =>{
+    //         setPokemonPicks(data)
+    //         data.map(pick => {
+    //             const url = `https://pokeapi.co/api/v2/pokemon/${pick.pokemonId}`;
+    //             promises.push(fetch(url)
+    //             .then((res) => res.json()));
+    //         })
+    //         Promise.all(promises)
+    //             .then((results) => {
+    //                 const pokemonList = results.map((result) => ({
+    //                     name: result.name,
+    //                     image: result.sprites['front_default'],
+    //                     type: result.types.map((type) => type.type.name).join(', '),
+    //                     id: result.id
+    //                 }));
+    //                 setPokemon(pokemonList)
+    //             })
+    //     })
+    // }, [])
+
+    useEffect(() => {
         fetch(`http://localhost:8088/pokemonPicks?userId=${pokeUserObject.id}`)
-        .then(res => res.json())
-        .then ((data) =>{
-            setPokemonPicks(data)
-            data.map(pick => {
-                const url = `https://pokeapi.co/api/v2/pokemon/${pick.pokemonId}`;
-                promises.push(fetch(url)
-                .then((res) => res.json()));
-            })
-            Promise.all(promises)
-                .then((results) => {
-                    const pokemonList = results.map((result) => ({
-                        name: result.name,
-                        image: result.sprites['front_default'],
-                        type: result.types.map((type) => type.type.name).join(', '),
-                        id: result.id
-                    }));
-                    setPokemon(pokemonList)
-                })
-        })
-    }, [])
+          .then((res) => res.json())
+          .then((data) => {
+            setPokemonPicks(data);
+          });
+      }, []);
+      useEffect(() => {
+        const promises = [];
+        pokemonPicks.map((pick) => {
+          const url = `https://pokeapi.co/api/v2/pokemon/${pick.pokemonId}`;
+          promises.push(fetch(url).then((res) => res.json()));
+        });
+        Promise.all(promises).then((results) => {
+          const pokemonList = results.map((result, index) => ({
+            name: result.name,
+            image: result.sprites["front_default"],
+            type: result.types.map((type) => type.type.name).join(", "),
+            id: result.id,
+            pokemonPickId: pokemonPicks[index].id,
+            pokemonNickName: pokemonPicks[index].pokemonNickName,
+          }));
+          setPokemon(pokemonList);
+        });
+      }, [pokemonPicks]);
+
+
 
     const handleClick = (evt) =>{
         const match = pokemonPicks.filter(poke => poke.pokemonId===parseInt(evt.target.id))
@@ -86,7 +114,7 @@ export const Profile = () => {
                 </div>
                 <div className="mid">
                     <div className="profile-picture">
-                        <img src="https://cdn11.bigcommerce.com/s-gyhhtwx4/images/stencil/300x300/products/2838/6337/079346033522_puzzle_1500__40452.1671818285.jpg?c=2" />
+                        <img width="400px" src={user[0].profilePicture} />
                     </div>
                     <div className="aboutMe">
                     {user[0].aboutMe}
@@ -100,17 +128,28 @@ export const Profile = () => {
                                 return (  
                                     <div
                                         className='pokemon'
-                                        key={`${Math.floor(Math.random() * 1000)}-${pokeUserObject.id}`}
+                                        key={`${pokemonObj.pokemonPickId}-${pokeUserObject.id}`}
                                     >
                                         <div className='pokemon-sprite'>
                                             <img src={pokemonObj.image} />
                                         </div>
-                                        <h2 className='pokemon-name'>
+                                        {
+                                            pokemonObj.pokemonNickName
+                                            ?
+                                            <h2 className='pokemon-name'>
+                                            {pokemonObj.pokemonNickName} 
+                                            </h2>
+                                            :
+                                            <h2 className='pokemon-name'>
                                             {pokemonObj.name} 
-                                        </h2>
+                                            </h2>
+                                        }
+
+
                                         <div className='pokemon-type'>
                                             type: {pokemonObj.type}
                                         </div>
+
                                         <div className="buttons">
                                             {/* <button className="button-85">
                                             ❤︎

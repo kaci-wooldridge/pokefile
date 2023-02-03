@@ -3,7 +3,7 @@ import "./PokemonList.css"
 import { useNavigate } from "react-router-dom"
 import { ChangeName } from '../profile/ChangeName'
 
-export const PokemonList = () => {
+export const PokemonList = ({searchTermState }) => {
     const navigate = useNavigate()
     const [nameClick, setNameClick] = useState(false)
     const localPokeUser = localStorage.getItem("pokefile_user")
@@ -11,19 +11,13 @@ export const PokemonList = () => {
 	const [pokemon, setPokemon] = useState([""])
     const [pokemonName, setPokemonName] = useState("")
     const [pokemonId, setPokemonId] = useState("")
-    const [chosenPokemon, setChosenPokemon] = useState({
-        userId: 0,
-        pokemonId: 0
-    })
-        // name: pokemon.name,
-        // image: pokemon.sprites['front_default'],
-        // type: pokemon.types.map((type) => type.type.name).join(', '),
-        // id: pokemon.id
+    const [filtered, setFiltered] = useState([])
+
     
 
     useEffect(() =>{
         const promises = [];
-        for (let i = 1; i <= 150; i++) {
+        for (let i = 1; i <= 700; i++) {
             const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
             promises.push(fetch(url)
             .then((res) => res.json()));
@@ -37,6 +31,7 @@ export const PokemonList = () => {
                     id: result.id
                 }));
                 setPokemon(pokemonList)
+                setFiltered(pokemonList)
             })
     }, 
     [])
@@ -45,33 +40,22 @@ export const PokemonList = () => {
         setNameClick(true)
         setPokemonName(name)
         setPokemonId(id)
-        // const copy = {...chosenPokemon}
-        // copy.userId = parseInt(pokeUserObject.id)
-        // copy.pokemonId = parseInt(evt.target.id)
-        // setChosenPokemon(copy)
-
-        // return fetch("http://localhost:8088/pokemonPicks", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: JSON.stringify(copy)
-        // })
-        //     .then(res => res.json())
     }
 
-	// useEffect(() => {
-	// 	fetch(`https://pokeapi.co/api/v2/pokemon?limit=150/`)
-	// 		.then((res) => res.json())
-	// 		.then((pokemonArray) => {
-	// 			setPokemon(pokemonArray.results)
-	// 		})
-	// }, []) // An empty dependency array will watch for the initial render of the component and only run the callback on that  initial run.
+    useEffect(
+        () => {
+            const searchedPokemon = pokemon.filter(p => 
+                p?.name?.toLowerCase().includes(searchTermState.toLowerCase()))
+            setFiltered(searchedPokemon)
+        },
+        [searchTermState]
+    )
+
 
 	return (<>
         { nameClick? <ChangeName setNameClick={setNameClick} pokemonName={pokemonName} pokemonId={pokemonId}/> : "" }
 		<div className='pokemon-container'>
-			{pokemon.map((pokemonObj) => {
+			{filtered.map((pokemonObj) => {
 				return (  
 					<div
 						className='pokemon'

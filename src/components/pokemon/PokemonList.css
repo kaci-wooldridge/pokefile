@@ -90,3 +90,17 @@
   top: 0;
   border-radius: 10px;
 }
+
+.searchbar{
+    border-radius: 10px;
+    border: 2px solid #9182b7;
+    width: 220px;
+    height: 20px;
+    text-align: center;
+}
+
+.barContainer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}

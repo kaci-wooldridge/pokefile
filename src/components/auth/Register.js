@@ -5,6 +5,7 @@ export const Register = (props) => {
     const [user, setUser] = useState({
         name: "",
         email: "",
+        profilePicture:"",
         aboutMe: "",
         teamId: 0
     })
@@ -83,6 +84,11 @@ export const Register = (props) => {
                     <input onChange={updateUser}
                         type="email" id="email" className="form-control"
                         placeholder="email" required />
+                    <br></br>
+                    <label htmlFor="profilePicture"> Profile Picture: </label>
+                    <input onChange={updateUser}
+                        type="text" id="profilePicture" className="form-control"
+                        placeholder="image address" required />
                     <br></br>
                     <label htmlFor="aboutMe"> About Me: </label>
                     <input onChange={updateUser}

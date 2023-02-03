@@ -5,6 +5,7 @@ export const ChangeName = ({setNameClick, pokemonName, pokemonId}) =>{
     const pokeUserObject = JSON.parse(localPokeUser)
     const [nameOption, setNameOption] = useState(false)
     const [chosenPokemon, setChosenPokemon] = useState({
+        uniqueKey: 0,
         userId: 0,
         pokemonId: 0,
         pokemonNickName: ""
@@ -17,6 +18,7 @@ export const ChangeName = ({setNameClick, pokemonName, pokemonId}) =>{
         copy.userId = parseInt(pokeUserObject.id)
         copy.pokemonId = parseInt(pokemonId)
         copy.pokemonNickName = newName
+        copy.uniqueKey = new Date()-parseInt(pokemonId)
         setChosenPokemon(copy)
 
         return fetch("http://localhost:8088/pokemonPicks", {

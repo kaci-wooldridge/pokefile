@@ -3,9 +3,9 @@ import { Authorized } from "./views/Authorized"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import "./Pokefile.css"
-import { PokemonList } from "./pokemon/PokemonList"
 import { NavBar } from "./nav/Navbar"
 import { Profile } from "./profile/Profile"
+import { PokemonContainer } from "./pokemon/PokemonContainer"
 
 
 export const Pokefile = () => {
@@ -38,7 +38,7 @@ export const Pokefile = () => {
 				>
 
 				</Route>
-				<Route path='pokemonList' element={<PokemonList />} />
+				<Route path='pokemonList' element={<PokemonContainer />} />
                 <Route path='profile' element={<Profile />} />
 			</Route>
 		</Routes>

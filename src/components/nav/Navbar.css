@@ -10,7 +10,6 @@
     color: #111;
     box-shadow: #c5bae4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
     height: 80px;
-
   }
   
   .navbar__item {
@@ -34,20 +33,3 @@
   .navbar__link:hover {
     text-decoration: underline;
   }
-  
-  /* LOGO */
-  
-  /* .logo {
-    justify-self: flex-start;
-    text-decoration: none;
-    justify-self: flex-start;
-  }
-  
-  .logo__link {
-    text-decoration: none;
-  } */
-  
-  /* .logo__img {
-    width: 12rem;
-    text-decoration: none;
-  } */
