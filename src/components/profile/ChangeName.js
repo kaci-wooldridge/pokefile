@@ -51,7 +51,7 @@ export const ChangeName = ({setNameClick, pokemonName, pokemonId}) =>{
                         onChange={evt => setNewName(evt.target.value)}
                         className="form-control2"
                         placeholder={pokemonName}
-                        required autoFocus />
+                        autoFocus />
                 </div>
                 <button className="button-80 button-85" type="submit" 
                     onClick={(evt) => {yesNameClick(evt)}}>

@@ -8,7 +8,7 @@ export const Profile = () => {
     const [profileId, setProfileId] = useState([""])
     const [pokemonPicks, setPokemonPicks] = useState([])
     const [isName, setIsName] = useState("")
-    const [pokemon, setPokemon] = useState([""])
+    const [pokemon, setPokemon] = useState([])
     const localPokeUser = localStorage.getItem("pokefile_user")
     const pokeUserObject = JSON.parse(localPokeUser)
 
@@ -77,31 +77,33 @@ export const Profile = () => {
     const handleClick = (evt) =>{
         const match = pokemonPicks.filter(poke => poke.pokemonId===parseInt(evt.target.id))
         if(pokeUserObject.id===match[0].userId && match[0].pokemonId===parseInt(evt.target.id)){
-            console.log(match[0].id)
+            // console.log(match[0].id)
             fetch(`http://localhost:8088/pokemonPicks/${match[0].id}`,{
                 method: "DELETE"
             })
             .then(() =>{
-                const promises = []
                 fetch(`http://localhost:8088/pokemonPicks?userId=${pokeUserObject.id}`)
-                .then(res => res.json())
-                .then ((data) =>{
-                    setPokemonPicks(data)
-                    data.map(pick => {
-                        const url = `https://pokeapi.co/api/v2/pokemon/${pick.pokemonId}`;
-                        promises.push(fetch(url)
-                        .then((res) => res.json()));
+                .then((res) => res.json())
+                .then((data) => {
+                  setPokemonPicks(data)
+                })
+                .then(() =>{
+                    const promises = [];
+                    pokemonPicks.map((pick) => {
+                    const url = `https://pokeapi.co/api/v2/pokemon/${pick.pokemonId}`;
+                    promises.push(fetch(url).then((res) => res.json()));
                     })
-                    Promise.all(promises)
-                        .then((results) => {
-                            const pokemonList = results.map((result) => ({
-                                name: result.name,
-                                image: result.sprites['front_default'],
-                                type: result.types.map((type) => type.type.name).join(', '),
-                                id: result.id
-                            }));
-                            setPokemon(pokemonList)
-                        })
+                    Promise.all(promises).then((results) => {
+                    const pokemonList = results.map((result, index) => ({
+                        name: result.name,
+                        image: result.sprites["front_default"],
+                        type: result.types.map((type) => type.type.name).join(", "),
+                        id: result.id,
+                        pokemonPickId: pokemonPicks[index].id,
+                        pokemonNickName: pokemonPicks[index].pokemonNickName,
+                    }))
+                    setPokemon(pokemonList)
+                    })
                 })
             })
         }
