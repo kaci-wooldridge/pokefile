@@ -128,7 +128,7 @@ export const Profile = () => {
                                 return (  
                                     <div
                                         className='pokemon'
-                                        key={`${pokemonObj.pokemonPickId}-${pokeUserObject.id}`}
+                                        key={`${pokemonObj?.pokemonPickId}-${pokeUserObject.id}`}
                                     >
                                         <div className='pokemon-sprite'>
                                             <img src={pokemonObj.image} />
