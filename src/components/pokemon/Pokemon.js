@@ -1,5 +1,3 @@
-
-
 export const Pokemon = ({pokemonObject}) =>{
 
     return <div className="pokemon" key={pokemonObject.id}>

@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
 import "./PokemonList.css"
-import { useNavigate } from "react-router-dom"
 import { ChangeName } from '../profile/ChangeName'
 
 export const PokemonList = ({searchTermState }) => {
-    const navigate = useNavigate()
     const [nameClick, setNameClick] = useState(false)
     const localPokeUser = localStorage.getItem("pokefile_user")
     const pokeUserObject = JSON.parse(localPokeUser)

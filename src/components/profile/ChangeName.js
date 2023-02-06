@@ -3,7 +3,6 @@ import { useState } from "react"
 export const ChangeName = ({setNameClick, pokemonName, pokemonId}) =>{
     const localPokeUser = localStorage.getItem("pokefile_user")
     const pokeUserObject = JSON.parse(localPokeUser)
-    const [nameOption, setNameOption] = useState(false)
     const [chosenPokemon, setChosenPokemon] = useState({
         uniqueKey: 0,
         userId: 0,
@@ -35,14 +34,9 @@ export const ChangeName = ({setNameClick, pokemonName, pokemonId}) =>{
 
     return<>
         <div id="changeName-form">
-        {/* <form className="form--name" onSubmit={}> */}
 
             <fieldset className="name-form">
                 <h3>{pokemonName} has been added to your pokedex!</h3>
-                {/* <button className="button-80 button-85" type="submit" 
-                    onClick={() => {setNameOption(true)}}>
-                    ✓
-                </button> */}
                 <div>
                     <label htmlFor="inputName">Name:</label>
                     <input
@@ -57,12 +51,7 @@ export const ChangeName = ({setNameClick, pokemonName, pokemonId}) =>{
                     onClick={(evt) => {yesNameClick(evt)}}>
                     ✓
                 </button>
-                {/* <button className="button-80 button-85"
-                    onClick={() => {setNameClick(false)}}>
-                    x
-                </button> */}
             </fieldset>
-        {/* </form> */}
         </div>
     </>
 }

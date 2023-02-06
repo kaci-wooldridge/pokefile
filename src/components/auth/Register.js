@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link, useNavigate  } from "react-router-dom"
 
-export const Register = (props) => {
+export const Register = () => {
     const [user, setUser] = useState({
         name: "",
         email: "",

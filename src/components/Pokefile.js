@@ -6,6 +6,7 @@ import "./Pokefile.css"
 import { NavBar } from "./nav/Navbar"
 import { Profile } from "./profile/Profile"
 import { PokemonContainer } from "./pokemon/PokemonContainer"
+import { Home } from "./home/Home"
 
 
 export const Pokefile = () => {
@@ -29,8 +30,7 @@ export const Pokefile = () => {
 					path='/'
 					element={
 						<>
-							<h1>Pokefile</h1>
-							<div>"gotta catch 'em all"</div>
+							<Home />
 							<Outlet />
 						</>
 					}

@@ -1,5 +1,3 @@
-
-
 export const PokemonSearch = ({ setterFunction }) =>{
     return(
         <div className="barContainer">
