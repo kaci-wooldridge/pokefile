@@ -5,14 +5,13 @@ import "./Profile.css"
 export const Profile = () => {
     const navigate = useNavigate()
     const [user, setUser] = useState([""])
-    const [profileId, setProfileId] = useState([""])
+    // const [profileId, setProfileId] = useState([""])
     const [pokemonPicks, setPokemonPicks] = useState([])
-    const [isName, setIsName] = useState("")
+    // const [isName, setIsName] = useState("")
     const [pokemon, setPokemon] = useState([])
     const localPokeUser = localStorage.getItem("pokefile_user")
     const pokeUserObject = JSON.parse(localPokeUser)
-
-    const [findId, setFindId] = useState([])
+    // const [findId, setFindId] = useState([])
 
     useEffect(() =>{
         fetch(`http://localhost:8088/users?id=${pokeUserObject.id}&_expand=team`)

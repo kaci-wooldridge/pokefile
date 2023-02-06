@@ -10,7 +10,7 @@ export const Register = (props) => {
         teamId: 0
     })
     const [teams, setTeams] = useState ([])
-    const [chosenTeam, setChosenTeam] = useState ([])
+    const [chosenTeam, setChosenTeam] = useState ('')
     let navigate = useNavigate()
 
     useEffect( () =>{
