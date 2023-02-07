@@ -104,3 +104,15 @@
     justify-content: space-around;
     margin-top: 30px;
 }
+
+.back-to-top{
+  position: fixed;
+  top:100%;
+  left:100%;
+  width:40px;  /* adjust as per your needs */
+  height:40px;   /* adjust as per your needs */
+  margin-left:-60px;   /* negative half of width above */
+  margin-top:-60px;   /* negative half of height above */
+  background-color: white;
+  z-index: 1;
+}

@@ -1,17 +1,39 @@
+.header{
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
 .mid{
-    margin: 20px;
-    padding: 10px;
+    margin-top: 20px;
+    margin-left: 30px;
+    padding: 50px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .profile-picture{
    box-shadow: #c5bae4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
    border-radius: 8px;
    margin-right: 50px;
+   text-align: center;
 }
 
 .profile-picture, .aboutMe{
     padding:10px;
+}
+
+.aboutMe{
+  padding-left: 100px;
+}
+
+.myPokemon{
+  margin-top: 60px;
+}
+
+.my-pokemon-header{
+  text-align: center;
 }
 
 .button-85:before {
@@ -80,7 +102,7 @@
 
   .changeName-button{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .name-form{
@@ -88,7 +110,7 @@
     display: flex;
     flex-direction: column;
     box-shadow: #c5bae4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
-    padding: 10px;
+    padding: 5px;
     height: 200%;
     width: 100%;
     align-items: center;
@@ -97,4 +119,47 @@
     font-size: 19px;
     border-radius: 8px;
     border: 0px;
+  }
+
+  .edit-profile{
+    position:absolute;
+    top: 20%;
+    left: 85%;
+    width:100px;  /* adjust as per your needs */
+    height:30px;   /* adjust as per your needs */  /* negative half of height above */
+    background-color: white;
+    z-index: 1;
+  }
+
+  .profile-container{
+    padding: 20px;
+  }
+
+  #changeName-form2{
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:450px;  /* adjust as per your needs */
+    height:200px;   /* adjust as per your needs */
+    margin-left:-200px;   /* negative half of width above */
+    margin-top:-200px;   /* negative half of height above */
+    background-color: white;
+    z-index: 1;
+  }
+
+  .x-button{
+    align-self: flex-end;
+      text-decoration: none;
+      color: black;
+      font-family: monospace;
+      font-size: 14px;
+      border: 0;
+      background-color: #c5bae4;
+      margin: 3px 3px 0px 0px;
+      padding-bottom: 3px;
+  }
+
+  .x-button:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }

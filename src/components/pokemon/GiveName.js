@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const ChangeName = ({setNameClick, pokemonName, pokemonId}) =>{
+export const GiveName = ({setNameClick, pokemonName, pokemonId}) =>{
     const localPokeUser = localStorage.getItem("pokefile_user")
     const pokeUserObject = JSON.parse(localPokeUser)
     const [chosenPokemon, setChosenPokemon] = useState({

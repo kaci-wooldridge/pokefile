@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { EditProfile } from "./EditProfile"
 import "./Profile.css"
 
 export const Profile = () => {
@@ -8,6 +9,7 @@ export const Profile = () => {
     const [pokemon, setPokemon] = useState([])
     const localPokeUser = localStorage.getItem("pokefile_user")
     const pokeUserObject = JSON.parse(localPokeUser)
+    const [editClick, setEditClick] = useState(false)
 
     useEffect(() =>{
         fetch(`http://localhost:8088/users?id=${pokeUserObject.id}&_expand=team`)
@@ -62,22 +64,28 @@ export const Profile = () => {
         }
     }
 
-    return <div className="profile-container">
+    const handleEditClick = () =>{
+        setEditClick(true)
+    }
+
+    return<>
+        { editClick? <EditProfile setEditClick={setEditClick} /> : "" }
+            <div className="profile-container">
                 <div className="header">
                     <h1>{user[0].name}</h1>
                     <div className="teamName">member of {user[0].team?.name}</div>
+                    <button className="button-85 edit-profile" onClick={handleEditClick}>edit profile</button>
                 </div>
                 <div className="mid">
                     <div className="profile-picture">
-                        <img width="400px" src={user[0].profilePicture} />
+                        <img width="450px" src={user[0].profilePicture} />
                     </div>
                     <div className="aboutMe">
                     {user[0].aboutMe}
                     </div>
                 </div>
-
                 <div className="myPokemon">
-                    <h2>My Pokemon</h2>
+                    <h2 className="my-pokemon-header">My Pokemon</h2>
                         <div className='pokemon-container'>
                             {pokemon.map((pokemonObj) => {
                                 return (  
@@ -117,5 +125,6 @@ export const Profile = () => {
                 </div>
 
             </div>
+        </>
 
 }
