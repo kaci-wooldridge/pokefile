@@ -88,6 +88,10 @@
     border-radius: 10px;
   }
 
+  .add-pokemon-button{
+    margin-top: 10px;
+}
+
   #changeName-form{
     position:fixed;
     top:50%;
@@ -123,7 +127,7 @@
 
   .edit-profile{
     position:absolute;
-    top: 20%;
+    top: 10%;
     left: 85%;
     width:100px;  /* adjust as per your needs */
     height:30px;   /* adjust as per your needs */  /* negative half of height above */
@@ -162,4 +166,9 @@
   .x-button:hover {
     text-decoration: underline;
     cursor: pointer;
+  }
+
+  .edit-header{
+    margin-top: 0px;
+    padding-top: 0px;
   }

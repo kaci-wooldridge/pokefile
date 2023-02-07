@@ -1,3 +1,4 @@
+import { FeaturedPokemon } from "./FeaturedPokemon"
 import "./home.css"
 
 export const Home = () =>{
@@ -5,9 +6,9 @@ export const Home = () =>{
         <div className="home-container">
             <h1>Welcome to Pokefile!</h1>
             <img className="home__img" src={require('./images/eevees.png')} border="0" />
-
-            <div>"gotta catch 'em all"</div>
+            <div>
+                <FeaturedPokemon />
+            </div>
         </div>
     </>
-
 }

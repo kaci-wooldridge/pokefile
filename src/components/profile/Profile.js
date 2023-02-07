@@ -37,10 +37,12 @@ export const Profile = () => {
           const pokemonList = results.map((result, index) => ({
             name: result.name,
             image: result.sprites["front_default"],
+            shinyImage: result.sprites["front_shiny"],
             type: result.types.map((type) => type.type.name).join(", "),
             id: result.id,
             pokemonPickId: pokemonPicks[index].id,
             pokemonNickName: pokemonPicks[index].pokemonNickName,
+            shiny: pokemonPicks[index].shiny
           }));
           setPokemon(pokemonList);
         });
@@ -49,9 +51,9 @@ export const Profile = () => {
 
 
     const handleClick = (evt) =>{
-        const match = pokemonPicks.filter(poke => poke.pokemonId===parseInt(evt.target.id))
-        if(pokeUserObject.id===match[0]?.userId && match[0].pokemonId===parseInt(evt.target.id)){
-            fetch(`http://localhost:8088/pokemonPicks/${match[0].id}`,{
+        const match = pokemon.filter(poke => poke.pokemonPickId===parseInt(evt.target.value))
+        if(match[0].pokemonPickId===parseInt(evt.target.value)){
+            fetch(`http://localhost:8088/pokemonPicks/${match[0].pokemonPickId}`,{
                 method: "DELETE"
             })
             .then(() =>{
@@ -94,7 +96,13 @@ export const Profile = () => {
                                         key={`${pokemonObj?.pokemonPickId}-${pokeUserObject.id}`}
                                     >
                                         <div className='pokemon-sprite'>
+                                        {
+                                            pokemonObj.shiny
+                                            ?
+                                            <img src={pokemonObj.shinyImage} />
+                                            :
                                             <img src={pokemonObj.image} />
+                                        }
                                         </div>
                                         {
                                             pokemonObj.pokemonNickName
@@ -111,7 +119,7 @@ export const Profile = () => {
                                             type: {pokemonObj.type}
                                         </div>
                                         <div className="buttons">
-                                            <button className='button-85' role="button" id={pokemonObj.id}
+                                            <button className='button-85' role="button" id={pokemonObj.id} value={pokemonObj.pokemonPickId}
                                                 onClick={(event) =>{
                                                     handleClick(event)
                                                 }}>

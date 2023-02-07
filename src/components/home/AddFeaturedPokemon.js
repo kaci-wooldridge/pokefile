@@ -1,8 +1,9 @@
 import { useState } from "react"
 
-export const GiveName = ({setNameClick, pokemonName, pokemonId}) =>{
+export const AddFeaturedPokemon = ({setNameClick, pokemonName, pokemonId}) =>{
     const localPokeUser = localStorage.getItem("pokefile_user")
     const pokeUserObject = JSON.parse(localPokeUser)
+    const [newName, setNewName] = useState("")
     const [chosenPokemon, setChosenPokemon] = useState({
         uniqueKey: 0,
         userId: 0,
@@ -10,7 +11,6 @@ export const GiveName = ({setNameClick, pokemonName, pokemonId}) =>{
         pokemonNickName: "",
         shiny: null
     })
-    const [newName, setNewName] = useState("")
 
     const isShiny = () =>{
         let shiny = null
@@ -44,8 +44,6 @@ export const GiveName = ({setNameClick, pokemonName, pokemonId}) =>{
         })
             .then(res => res.json())
     }
-
-
 
     return<>
         <div id="changeName-form">

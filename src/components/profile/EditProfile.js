@@ -73,7 +73,7 @@ export const EditProfile = ({setEditClick}) =>{
             <div id="changeName-form2">
                 <fieldset className="name-form">
                 <button className="x-button" onClick={handleClick}> x </button>
-                    <h3>What would you like to change?</h3>   
+                    <h3 className="edit-header">What would you like to change?</h3>   
                     <div className="babies">
                         <label htmlFor="name"> Name: </label>
                         <input onChange={(evt)=>{updateUser(evt)}}

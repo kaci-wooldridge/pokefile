@@ -15,7 +15,7 @@ export const PokemonList = ({ searchTermState }) => {
 
 	useEffect(() => {
 		const promises = []
-		for (let i = 1; i <= 700; i++) {
+		for (let i = 1; i <= 1008; i++) {
 			const url = `https://pokeapi.co/api/v2/pokemon/${i}`
 			promises.push(fetch(url).then((res) => res.json()))
 		}
@@ -77,7 +77,7 @@ export const PokemonList = ({ searchTermState }) => {
 							</div>
 							<div className='add-button'>
 								<button
-									className='button-85'
+									className='button-85 add-pokemon-button'
 									role='button'
 									id={pokemonObj.id}
 									onClick={() => {
@@ -94,9 +94,11 @@ export const PokemonList = ({ searchTermState }) => {
 					)
 				})}
 			</div>
-			<button className='button-85 back-to-top' onClick={backToTop}>
-				🔝
-			</button>
+            <div className="top-button">
+                <button className='button-85 back-to-top' onClick={backToTop}>
+                    🔝
+                </button>
+            </div>
 		</>
 	)
 }
