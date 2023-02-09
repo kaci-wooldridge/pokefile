@@ -1,10 +1,9 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-export const GiveName = ({setNameClick, pokemonName, pokemonId}) =>{
+export const GiveName = ({setNameClick, pokemonName, pokemonId, shiny}) =>{
     const localPokeUser = localStorage.getItem("pokefile_user")
     const pokeUserObject = JSON.parse(localPokeUser)
-    const [shiny, setShiny] = useState(false)
     const [chosenPokemon, setChosenPokemon] = useState({
         uniqueKey: 0,
         userId: 0,
@@ -14,20 +13,8 @@ export const GiveName = ({setNameClick, pokemonName, pokemonId}) =>{
     })
     const [newName, setNewName] = useState("")
 
-    const isShiny = () =>{
-        let shiny = null
-        const num = Math.floor(Math.random() * 100)
-        if(num > 80){
-            shiny = true
-        }else{
-            shiny = false
-        }
-        return shiny
-    }
-
     const yesNameClick = (evt) =>{
         setNameClick(false)
-        const shiny = isShiny()
         const copy = {...chosenPokemon}
         copy.userId = parseInt(pokeUserObject.id)
         copy.pokemonId = parseInt(pokemonId)
@@ -35,9 +22,7 @@ export const GiveName = ({setNameClick, pokemonName, pokemonId}) =>{
         copy.uniqueKey = new Date()-parseInt(pokemonId)
         copy.shiny = shiny
         setChosenPokemon(copy)
-        if(shiny){
-            setShiny(true)
-        }
+
 
         return fetch("http://localhost:8088/pokemonPicks", {
             method: "POST",
@@ -52,8 +37,15 @@ export const GiveName = ({setNameClick, pokemonName, pokemonId}) =>{
 
 
     return<>
-        <div id="changeName-form">
+        <div id="changeName-form3">
             <fieldset className="name-form">
+                {
+                    shiny
+                    ?
+                    <h2>!!{pokemonName} is shiny!!</h2> 
+                    :
+                    ""
+                }
                 <h3>{pokemonName} has been added to your pokedex!</h3>
                 <div>
                     <label htmlFor="inputName">Name:</label>

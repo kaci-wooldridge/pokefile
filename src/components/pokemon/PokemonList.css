@@ -5,7 +5,7 @@
     margin: 20px;
     justify-content: space-evenly;
     text-align: center;
-
+    color: #2f1c49;
 }
 
 .pokemon-sprite{
@@ -16,7 +16,7 @@
     /* border: 3px solid #e4bfba; */
     margin:25px;
     padding: 5px;
-    box-shadow: #c5bae4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
+    box-shadow: #cbb9e4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
     border-radius: 8px;
 }
 
@@ -28,8 +28,8 @@
   margin:6px;
   border: none;
   outline: none;
-  color: rgb(255, 255, 255);
-  background: #c5bae4;
+  color: #ffffff;
+  background: #cbb9e4;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -93,7 +93,7 @@
 
 .searchbar{
     border-radius: 10px;
-    border: 2px solid #9182b7;
+    border: 2px solid #916bc6;
     width: 220px;
     height: 20px;
     text-align: center;
@@ -113,6 +113,18 @@
   height:40px;   /* adjust as per your needs */
   margin-left:-60px;   /* negative half of width above */
   margin-top:-60px;   /* negative half of height above */
-  background-color: white;
+  background-color: #f6eaf1;
+  z-index: 1;
+}
+
+#changeName-form3{
+  position:fixed;
+  top:50%;
+  left:50%;
+  width:450px;  /* adjust as per your needs */
+  height:130px;   /* adjust as per your needs */
+  margin-left:-200px;   /* negative half of width above */
+  margin-top:-200px;   /* negative half of height above */
+  background-color: #f2f0f9;
   z-index: 1;
 }

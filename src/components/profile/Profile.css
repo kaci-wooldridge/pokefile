@@ -3,13 +3,19 @@
   margin-left: 40px;
 }
 
+.user-name{
+  font-size: 40px;
+}
+
+.teamName{
+  font-size: 14px;
+}
+
 .mid{
-    margin-top: 20px;
-    margin-left: 30px;
-    padding: 50px;
+    padding: 20px 50px 20px 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     
 }
 
@@ -25,7 +31,8 @@
 }
 
 .aboutMe{
-  padding-left: 100px;
+  max-width: 300px;
+  font-size: 16px;
 }
 
 .myPokemon{
@@ -34,6 +41,7 @@
 
 .my-pokemon-header{
   text-align: center;
+  font-size: 27px;
 }
 
 .button-85:before {
@@ -104,7 +112,7 @@
     height:100px;   /* adjust as per your needs */
     margin-left:-200px;   /* negative half of width above */
     margin-top:-200px;   /* negative half of height above */
-    background-color: white;
+    background-color: #fbf6f9;
     z-index: 1;
   }
 
@@ -114,7 +122,7 @@
   }
 
   .name-form{
-    background-color: white;
+    background-color: #f2f0f9;
     display: flex;
     flex-direction: column;
     box-shadow: #c5bae4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
@@ -135,7 +143,7 @@
     left: 85%;
     width:100px;  /* adjust as per your needs */
     height:30px;   /* adjust as per your needs */  /* negative half of height above */
-    background-color: white;
+    background-color: #f2f0f9;
     z-index: 1;
   }
 
@@ -151,21 +159,21 @@
     height:200px;   /* adjust as per your needs */
     margin-left:-200px;   /* negative half of width above */
     margin-top:-200px;   /* negative half of height above */
-    background-color: white;
+    background-color: #f2f0f9;
     z-index: 1;
   }
 
   .x-button{
     align-self: flex-end;
-      text-decoration: none;
-      color: black;
-      font-family: monospace;
-      font-size: 14px;
-      border: 0;
-      background-color: 0;
-      margin: 3px 3px 0px 0px;
-      padding-bottom: 3px;
-      border-radius: 8px;
+    text-decoration: none;
+    color: #2f1c49;
+    font-family: monospace;
+    font-size: 14px;
+    border: 0;
+    background-color: 0;
+    margin: 3px 3px 0px 0px;
+    padding-bottom: 3px;
+    border-radius: 8px;
   }
 
   .edit-header{
@@ -176,17 +184,18 @@
   .edit-name-button{
     display: flex;
     justify-content: flex-end;
+    color: #ffffff;
 
   }
 
   .gear{
     font-size: 12px;
     text-decoration: none;
-    color: black;
+    color: #2f1c49;
     font-family: monospace;
     font-size: 14px;
     border: 0;
-    background-color: 0;
+    background-color: #f6eaf1;
     margin: 3px 3px 0px 0px;
     padding-bottom: 3px;
     border-radius: 8px;

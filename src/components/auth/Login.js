@@ -32,7 +32,7 @@ export const Login = () => {
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1 className="welcome">Welcome to Pokefile!</h1>
-                    <h3>Please sign in</h3>
+                    <h3 className="sign-in">Please sign in</h3>
                     <fieldset className="form">
                         <label htmlFor="inputEmail"> Email </label>
                         <input type="email"

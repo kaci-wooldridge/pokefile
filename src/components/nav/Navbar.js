@@ -19,6 +19,12 @@ export const NavBar = () => {
                 </Link>
             </li>
 
+            <li className="navbar__item trainersButton">
+                <Link className="navbar__link" to="/trainers">
+                    Trainers
+                </Link>
+            </li>
+
             <li className="navbar__item profileButton">
                 <Link className="navbar__link" to="/profile">
                     Profile

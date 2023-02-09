@@ -7,6 +7,7 @@ import { NavBar } from "./nav/Navbar"
 import { Profile } from "./profile/Profile"
 import { PokemonContainer } from "./pokemon/PokemonContainer"
 import { Home } from "./home/Home"
+import { TrainerList } from "./trainers/TrainersList"
 
 
 export const Pokefile = () => {
@@ -40,6 +41,8 @@ export const Pokefile = () => {
 				</Route>
 				<Route path='pokemonList' element={<PokemonContainer />} />
                 <Route path='profile' element={<Profile />} />
+				<Route path='profile/:userId' element={<Profile />} />
+				<Route path='trainers' element={<TrainerList />} />
 			</Route>
 		</Routes>
 	)
