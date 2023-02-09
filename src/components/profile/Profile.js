@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { EditPokemonName } from "./EditPokemon"
 import { EditProfile } from "./EditProfile"
 import "./Profile.css"
 
@@ -10,6 +11,8 @@ export const Profile = () => {
     const localPokeUser = localStorage.getItem("pokefile_user")
     const pokeUserObject = JSON.parse(localPokeUser)
     const [editClick, setEditClick] = useState(false)
+    const [changeName, setChangeName] = useState(false)
+    const [pickId, setPickId] = useState(null)
 
     useEffect(() =>{
         fetch(`http://localhost:8088/users?id=${pokeUserObject.id}&_expand=team`)
@@ -70,8 +73,14 @@ export const Profile = () => {
         setEditClick(true)
     }
 
+    const changeNameClick = (id) =>{
+        setChangeName(true)
+        setPickId(id)
+    }
+
     return<>
         { editClick? <EditProfile setEditClick={setEditClick} /> : "" }
+        { changeName? <EditPokemonName setChangeName={setChangeName} pickId={pickId}/> : "" }
             <div className="profile-container">
                 <div className="header">
                     <h1>{user[0].name}</h1>
@@ -90,11 +99,14 @@ export const Profile = () => {
                     <h2 className="my-pokemon-header">My Pokemon</h2>
                         <div className='pokemon-container'>
                             {pokemon.map((pokemonObj) => {
-                                return (  
+                                return (
                                     <div
                                         className='pokemon'
                                         key={`${pokemonObj?.pokemonPickId}-${pokeUserObject.id}`}
                                     >
+                                        <div className="edit-name-button">
+                                            <button className="gear" onClick={()=>{changeNameClick(parseInt(pokemonObj.pokemonPickId))}}>⚙️</button>
+                                        </div>
                                         <div className='pokemon-sprite'>
                                         {
                                             pokemonObj.shiny

@@ -1,8 +1,10 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export const GiveName = ({setNameClick, pokemonName, pokemonId}) =>{
     const localPokeUser = localStorage.getItem("pokefile_user")
     const pokeUserObject = JSON.parse(localPokeUser)
+    const [shiny, setShiny] = useState(false)
     const [chosenPokemon, setChosenPokemon] = useState({
         uniqueKey: 0,
         userId: 0,
@@ -20,7 +22,6 @@ export const GiveName = ({setNameClick, pokemonName, pokemonId}) =>{
         }else{
             shiny = false
         }
-        console.log(shiny)
         return shiny
     }
 
@@ -34,6 +35,9 @@ export const GiveName = ({setNameClick, pokemonName, pokemonId}) =>{
         copy.uniqueKey = new Date()-parseInt(pokemonId)
         copy.shiny = shiny
         setChosenPokemon(copy)
+        if(shiny){
+            setShiny(true)
+        }
 
         return fetch("http://localhost:8088/pokemonPicks", {
             method: "POST",

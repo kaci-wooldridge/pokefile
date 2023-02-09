@@ -12,6 +12,7 @@ export const PokemonList = ({ searchTermState }) => {
 	const [pokemonId, setPokemonId] = useState('')
 	const [filtered, setFiltered] = useState([])
 	const navigate = useNavigate()
+    
 
 	useEffect(() => {
 		const promises = []

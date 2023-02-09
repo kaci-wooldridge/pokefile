@@ -88,6 +88,10 @@
     border-radius: 10px;
   }
 
+  .button-85{
+    font-weight: 700;
+  }
+
   .add-pokemon-button{
     margin-top: 10px;
 }
@@ -158,17 +162,41 @@
       font-family: monospace;
       font-size: 14px;
       border: 0;
-      background-color: #c5bae4;
+      background-color: 0;
       margin: 3px 3px 0px 0px;
       padding-bottom: 3px;
-  }
-
-  .x-button:hover {
-    text-decoration: underline;
-    cursor: pointer;
+      border-radius: 8px;
   }
 
   .edit-header{
     margin-top: 0px;
     padding-top: 0px;
+  }
+
+  .edit-name-button{
+    display: flex;
+    justify-content: flex-end;
+
+  }
+
+  .gear{
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    font-family: monospace;
+    font-size: 14px;
+    border: 0;
+    background-color: 0;
+    margin: 3px 3px 0px 0px;
+    padding-bottom: 3px;
+    border-radius: 8px;
+  }
+
+  .gear:hover,
+  .gear:focus,
+  .x-button:hover,
+  .x-button:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+    cursor: pointer;
   }
