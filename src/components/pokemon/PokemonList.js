@@ -12,6 +12,7 @@ export const PokemonList = ({ searchTermState }) => {
 	const [pokemonId, setPokemonId] = useState('')
 	const [filtered, setFiltered] = useState([])
 	const navigate = useNavigate()
+    const [shiny, setShiny] = useState(false)
     
 
 	useEffect(() => {
@@ -32,10 +33,25 @@ export const PokemonList = ({ searchTermState }) => {
 		})
 	}, [])
 
+    const isShiny = () =>{
+        let shiny = null
+        const num = Math.floor(Math.random() * 100)
+        if(num > 80){
+            shiny = true
+        }else{
+            shiny = false
+        }
+        return shiny
+    }
+
 	const handleClick = (name, id) => {
+        const shiny = isShiny()
 		setNameClick(true)
 		setPokemonName(name)
 		setPokemonId(id)
+        if(shiny){
+            setShiny(true)
+        }
 	}
 
 	useEffect(() => {
@@ -56,6 +72,7 @@ export const PokemonList = ({ searchTermState }) => {
 					setNameClick={setNameClick}
 					pokemonName={pokemonName}
 					pokemonId={pokemonId}
+                    shiny={shiny}
 				/>
 			) : (
 				''

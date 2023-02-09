@@ -10,7 +10,7 @@
     border-radius: 8px;
     box-sizing: border-box;
     color: #111;
-    box-shadow: #c5bae4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
+    box-shadow: #cbb9e4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
     height: 80px;
     text-align: center;
     width: 75%;
@@ -31,7 +31,7 @@
     border-radius: 8px;
     box-sizing: border-box;
     color: #111;
-    box-shadow: #c5bae4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
+    box-shadow: #cbb9e4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
     height: 80px;
     text-align: center;
     width: 75%;
@@ -46,7 +46,7 @@
   }
 
   .form{
-    box-shadow: #c5bae4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
+    box-shadow: #cbb9e4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
     margin-top: 60px;
     padding: 20px;
     height: 200%;
@@ -56,10 +56,11 @@
     font-size: 19px;
     border-radius: 8px;
     border: 0px;
+    background-color: #f2f0f9;
   }
 
   .form2{
-    box-shadow: #c5bae4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
+    box-shadow: #cbb9e4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
     margin-top: 60px;
     padding: 20px;
     height: 200%;
@@ -69,6 +70,7 @@
     font-size: 19px;
     border-radius: 8px;
     border: 0px;
+    background-color: #f2f0f9;
   }
 
   .link--register{
@@ -78,7 +80,7 @@
 
 .link{
     text-decoration: none;
-    color: black;
+    color: #2f1c49;
     font-family: monospace;
     font-size: 13px;
   }
@@ -89,7 +91,7 @@
 
   .form-control {
     border-radius: 8px;
-    border: 1px solid black;
+    border: 1px solid #2f1c49;
     text-align: center;
     margin: 10px;
     width: 200px;
@@ -98,9 +100,13 @@
 
   .form-control2{
     border-radius: 8px;
-    border: 1px solid black;
+    border: 1px solid #2f1c49;
     text-align: center;
     margin: 10px;
     width: 225px;
     height: 20px;
+  }
+
+  .sign-in{
+    margin-bottom: 80px;
   }
