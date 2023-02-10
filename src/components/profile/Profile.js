@@ -95,7 +95,14 @@ export const Profile = () => {
                 <div className="header">
                     <h1 className="user-name">{user[0]?.name}</h1>
                     <div className="teamName">member of {user[0]?.team?.name}</div>
-                    <button className="button-85 edit-profile" onClick={handleEditClick}>edit profile</button>
+                    {
+                        pokeUserObject.id === user[0]?.id
+                        ? 
+                        <button className="button-85 edit-profile" onClick={handleEditClick}>edit profile</button> 
+                        :
+                        ""
+                    }
+                    {/* <button className="button-85 edit-profile" onClick={handleEditClick}>edit profile</button> */}
                 </div>
                 <div className="mid">
                     <div className="profile-picture">
@@ -114,9 +121,15 @@ export const Profile = () => {
                                         className='pokemon'
                                         key={`${pokemonObj?.pokemonPickId}-${pokeUserObject.id}`}
                                     >
-                                        <div className="edit-name-button">
-                                            <button className="gear" onClick={()=>{changeNameClick(parseInt(pokemonObj.pokemonPickId))}}>⚙️</button>
-                                        </div>
+                                    {
+                                    pokeUserObject.id === user[0]?.id
+                                    ? 
+                                    <div className="edit-name-button">
+                                        <button className="gear" onClick={()=>{changeNameClick(parseInt(pokemonObj.pokemonPickId))}}>⚙️</button>
+                                    </div>
+                                    :
+                                    ""
+                                    }
                                         <div className='pokemon-sprite'>
                                         {
                                             pokemonObj.shiny
@@ -140,6 +153,9 @@ export const Profile = () => {
                                         <div className='pokemon-type'>
                                             type: {pokemonObj.type}
                                         </div>
+                                        {
+                                        pokeUserObject.id === user[0]?.id
+                                        ? 
                                         <div className="buttons">
                                             <button className='button-85' role="button" id={pokemonObj.id} value={pokemonObj.pokemonPickId}
                                                 onClick={(event) =>{
@@ -148,6 +164,9 @@ export const Profile = () => {
                                             x
                                             </button>
                                         </div>
+                                        :
+                                        ""
+                                        }
                                     </div>
                                 )
                             })}

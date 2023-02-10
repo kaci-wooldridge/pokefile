@@ -4,6 +4,8 @@ import "./Navbar.css"
 
 export const NavBar = () => {
     const navigate = useNavigate()
+    const localPokeUser = localStorage.getItem("pokefile_user")
+    const pokeUserObject = JSON.parse(localPokeUser)
 
     return (
         <ul className="navbar">
@@ -26,7 +28,7 @@ export const NavBar = () => {
             </li>
 
             <li className="navbar__item profileButton">
-                <Link className="navbar__link" to="/profile">
+                <Link className="navbar__link" to={`../profile/${pokeUserObject.id}`}>
                     Profile
                 </Link>
             </li>
