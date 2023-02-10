@@ -11,6 +11,8 @@ import { TrainerList } from "./trainers/TrainersList"
 
 
 export const Pokefile = () => {
+	const localPokeUser = localStorage.getItem("pokefile_user")
+    const pokeUserObject = JSON.parse(localPokeUser)
 	return (
 		<Routes>
 			<Route path='/login' element={<Login />} />
@@ -40,7 +42,7 @@ export const Pokefile = () => {
 
 				</Route>
 				<Route path='pokemonList' element={<PokemonContainer />} />
-                <Route path='profile' element={<Profile />} />
+                {/* <Route path='profile/:userId' element={<Profile />} /> */}
 				<Route path='profile/:userId' element={<Profile />} />
 				<Route path='trainers' element={<TrainerList />} />
 			</Route>
