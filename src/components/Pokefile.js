@@ -42,7 +42,6 @@ export const Pokefile = () => {
 
 				</Route>
 				<Route path='pokemonList' element={<PokemonContainer />} />
-                {/* <Route path='profile/:userId' element={<Profile />} /> */}
 				<Route path='profile/:userId' element={<Profile />} />
 				<Route path='trainers' element={<TrainerList />} />
 			</Route>

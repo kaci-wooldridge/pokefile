@@ -14,31 +14,23 @@ export const Profile = () => {
     const [editClick, setEditClick] = useState(false)
     const [changeName, setChangeName] = useState(false)
     const [pickId, setPickId] = useState(null)
-    const [currentProfile, setCurrentProfile] = useState(0)
+    const [currentProfile, setCurrentProfile] = useState("")
 
     useEffect(() =>{
-        if(userId){
-            setCurrentProfile(userId)
-        }else{
-            setCurrentProfile(pokeUserObject.id)
-        }
-    },[])
-
-    useEffect(() =>{
-        fetch(`http://localhost:8088/users?id=${currentProfile}&_expand=team`)
+        fetch(`http://localhost:8088/users/${userId}/?_expand=team`)
         .then(res => res.json())
         .then ((data) =>{
             setUser(data)
         })}
-    ,[currentProfile])
+    ,[userId])
 
     useEffect(() => {
-        fetch(`http://localhost:8088/pokemonPicks?userId=${currentProfile}`)
+        fetch(`http://localhost:8088/pokemonPicks?userId=${userId}`)
           .then((res) => res.json())
           .then((data) => {
             setPokemonPicks(data);
           });
-      }, [currentProfile]);
+      }, [userId]);
 
       useEffect(() => {
         const promises = [];
@@ -93,23 +85,22 @@ export const Profile = () => {
         { changeName? <EditPokemonName setChangeName={setChangeName} pickId={pickId}/> : "" }
             <div className="profile-container">
                 <div className="header">
-                    <h1 className="user-name">{user[0]?.name}</h1>
-                    <div className="teamName">member of {user[0]?.team?.name}</div>
+                    <h1 className="user-name">{user?.name}</h1>
+                    <div className="teamName">member of {user?.team?.name}</div>
                     {
-                        pokeUserObject.id === user[0]?.id
+                        pokeUserObject.id === user?.id
                         ? 
                         <button className="button-85 edit-profile" onClick={handleEditClick}>edit profile</button> 
                         :
                         ""
                     }
-                    {/* <button className="button-85 edit-profile" onClick={handleEditClick}>edit profile</button> */}
                 </div>
                 <div className="mid">
                     <div className="profile-picture">
-                        <img width="450px" src={user[0]?.profilePicture} />
+                        <img width="450px" src={user?.profilePicture} />
                     </div>
                     <div className="aboutMe">
-                    {user[0]?.aboutMe}
+                    {user?.aboutMe}
                     </div>
                 </div>
                 <div className="myPokemon">
@@ -122,7 +113,7 @@ export const Profile = () => {
                                         key={`${pokemonObj?.pokemonPickId}-${pokeUserObject.id}`}
                                     >
                                     {
-                                    pokeUserObject.id === user[0]?.id
+                                    pokeUserObject.id === user?.id
                                     ? 
                                     <div className="edit-name-button">
                                         <button className="gear" onClick={()=>{changeNameClick(parseInt(pokemonObj.pokemonPickId))}}>⚙️</button>
@@ -154,7 +145,7 @@ export const Profile = () => {
                                             type: {pokemonObj.type}
                                         </div>
                                         {
-                                        pokeUserObject.id === user[0]?.id
+                                        pokeUserObject.id === user?.id
                                         ? 
                                         <div className="buttons">
                                             <button className='button-85' role="button" id={pokemonObj.id} value={pokemonObj.pokemonPickId}

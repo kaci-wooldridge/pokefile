@@ -61,6 +61,7 @@
   
   .navbar__link:hover {
    background-position: 0;
+   cursor: pointer;
   }
   
   .navbar__link:hover::before {
