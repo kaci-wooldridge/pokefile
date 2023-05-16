@@ -1,0 +1,58 @@
+.trainer-name{
+    text-decoration: none;
+    color: #2f1c49;
+    font-size: 35px;
+
+}
+
+.trainer-container{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px 0px 0px;
+}
+
+.trainer{
+    margin-top: 10px;
+}
+
+.link {
+    background-image: linear-gradient(
+      to right,
+      #c975a7,
+      #916bc6 50%,
+      #2f1c49 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .link:before {
+    content: '';
+    background-image: linear-gradient(
+      to right,
+      #916bc6,
+      #c975a7 50%
+    );
+    /* background: #916bc6; */
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .link:hover {
+   background-position: 0;
+  }
+  
+  .link:hover::before {
+    width:100%;
+  }

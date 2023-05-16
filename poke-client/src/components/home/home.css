@@ -1,0 +1,23 @@
+.home__img{
+    width: 900px;
+    height: 480px;
+    /* border:5px dotted red; */
+    outline: none;
+    border-style: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.home-container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.add-pokemon-button{
+    margin-top: 10px;
+}

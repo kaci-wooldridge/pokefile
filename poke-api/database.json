@@ -1,0 +1,260 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Kaci",
+      "email": "kaci@pokefile.com",
+      "profilePicture": "https://pbs.twimg.com/media/EWoW6PsXgAMInce.jpg",
+      "aboutMe": "Hi! I'm Kaci. My hobbies include catching pokemon and long walks on the beach.",
+      "teamId": 1
+    },
+    {
+      "name": "Marek",
+      "email": "marek@pokefile.com",
+      "profilePicture": "https://games.lol/wp-content/uploads/2022/04/pokemon-unite-venusaur-attack-guide.jpg",
+      "aboutMe": "Venusaur is #1",
+      "teamId": 2,
+      "id": 2
+    },
+    {
+      "name": "Matt",
+      "email": "matt@pokefile.com",
+      "aboutMe": "hi",
+      "teamId": 3,
+      "id": 3
+    },
+    {
+      "name": "Chris",
+      "email": "chris@pokefile.com",
+      "profilePicture": "https://wallpapers.com/images/featured/t7wod9bjkjk3a3m2.jpg",
+      "aboutMe": "I love to win",
+      "teamId": 4,
+      "id": 4
+    },
+    {
+      "name": "Logan",
+      "email": "logan@pokefile.com",
+      "profilePicture": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/pokemon-go-magikarp-raid-battle.jpg",
+      "aboutMe": "i enjoy magikarp",
+      "teamId": 1,
+      "id": 5
+    },
+    {
+      "name": "Derek",
+      "email": "derek@pokefile.com",
+      "profilePicture": "https://cdn.vox-cdn.com/thumbor/0kw6ieKTdzGxVk-ApCKesrwQF2o=/0x0:2257x1320/2000x1333/filters:focal(1129x660:1130x661)/cdn.vox-cdn.com/uploads/chorus_asset/file/6839749/pokemon.0.png",
+      "aboutMe": "Hello!",
+      "teamId": 2,
+      "id": 6
+    },
+    {
+      "name": "Abby",
+      "email": "abby@pokefile.com",
+      "profilePicture": "https://i.pinimg.com/564x/63/b5/fb/63b5fbe4fa11df634e11af53dbf2438c.jpg",
+      "aboutMe": "haiiii. i'm cute.",
+      "teamId": 1,
+      "id": 7
+    },
+    {
+      "name": "Matthew",
+      "email": "matthew@pokefile.com",
+      "profilePicture": "https://img.rankedboost.com/wp-content/uploads/2018/08/Pokemon-Quest-Farfetchd.png",
+      "aboutMe": "I like shorts! They're comfy, and easy to wear!",
+      "teamId": 2,
+      "id": 8
+    },
+    {
+      "name": "shawn",
+      "email": "s@s.com",
+      "profilePicture": "https://wallpapers.com/images/featured/t7wod9bjkjk3a3m2.jpg",
+      "aboutMe": "Hello!",
+      "teamId": 4,
+      "id": 9
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "name": "Team Mystic"
+    },
+    {
+      "id": 2,
+      "name": "Team Instinct"
+    },
+    {
+      "id": 3,
+      "name": "Team Valor"
+    },
+    {
+      "id": 4,
+      "name": "Team Rocket"
+    }
+  ],
+  "pokemonPicks": [
+    {
+      "uniqueKey": 1675706313302,
+      "userId": 5,
+      "pokemonId": 129,
+      "pokemonNickName": "",
+      "id": 13
+    },
+    {
+      "uniqueKey": 1675706318100,
+      "userId": 5,
+      "pokemonId": 130,
+      "pokemonNickName": "",
+      "id": 14
+    },
+    {
+      "uniqueKey": 1675713675995,
+      "userId": 6,
+      "pokemonId": 39,
+      "pokemonNickName": "",
+      "id": 15
+    },
+    {
+      "uniqueKey": 1675890180866,
+      "userId": 1,
+      "pokemonId": 133,
+      "pokemonNickName": "tim",
+      "shiny": true,
+      "id": 16
+    },
+    {
+      "uniqueKey": 1675798835767,
+      "userId": 1,
+      "pokemonId": 134,
+      "pokemonNickName": "",
+      "id": 17,
+      "shiny": true
+    },
+    {
+      "uniqueKey": 1675798841266,
+      "userId": 1,
+      "pokemonId": 135,
+      "pokemonNickName": "jolteon",
+      "id": 18,
+      "shiny": true
+    },
+    {
+      "uniqueKey": 1675798846698,
+      "userId": 1,
+      "pokemonId": 136,
+      "pokemonNickName": "",
+      "id": 19,
+      "shiny": true
+    },
+    {
+      "uniqueKey": 1675807884492,
+      "userId": 7,
+      "pokemonId": 197,
+      "pokemonNickName": "",
+      "shiny": true,
+      "id": 24
+    },
+    {
+      "uniqueKey": 1675808415200,
+      "userId": 7,
+      "pokemonId": 522,
+      "pokemonNickName": "cuteeeee",
+      "shiny": true,
+      "id": 25
+    },
+    {
+      "uniqueKey": 1675963998322,
+      "userId": 1,
+      "pokemonId": 196,
+      "pokemonNickName": "",
+      "shiny": true,
+      "id": 26
+    },
+    {
+      "uniqueKey": 1675964006555,
+      "userId": 1,
+      "pokemonId": 197,
+      "pokemonNickName": "",
+      "shiny": true,
+      "id": 27
+    },
+    {
+      "uniqueKey": 1675964013599,
+      "userId": 1,
+      "pokemonId": 470,
+      "pokemonNickName": "",
+      "shiny": true,
+      "id": 28
+    },
+    {
+      "uniqueKey": 1675964021031,
+      "userId": 1,
+      "pokemonId": 471,
+      "pokemonNickName": "",
+      "shiny": true,
+      "id": 29
+    },
+    {
+      "uniqueKey": 1675964029785,
+      "userId": 1,
+      "pokemonId": 700,
+      "pokemonNickName": "",
+      "shiny": true,
+      "id": 30
+    },
+    {
+      "uniqueKey": 1676057392599,
+      "userId": 2,
+      "pokemonId": 3,
+      "pokemonNickName": "",
+      "shiny": true,
+      "id": 35
+    },
+    {
+      "uniqueKey": 1676057595162,
+      "userId": 8,
+      "pokemonId": 83,
+      "pokemonNickName": "dan dan",
+      "shiny": false,
+      "id": 36
+    },
+    {
+      "uniqueKey": 1676057633300,
+      "userId": 8,
+      "pokemonId": 62,
+      "pokemonNickName": "",
+      "shiny": false,
+      "id": 37
+    },
+    {
+      "uniqueKey": 1676057669168,
+      "userId": 8,
+      "pokemonId": 28,
+      "pokemonNickName": "",
+      "shiny": false,
+      "id": 38
+    },
+    {
+      "uniqueKey": 1676057740747,
+      "userId": 8,
+      "pokemonId": 51,
+      "pokemonNickName": "",
+      "shiny": false,
+      "id": 39
+    },
+    {
+      "uniqueKey": 1676998124301,
+      "userId": 1,
+      "pokemonId": 6,
+      "pokemonNickName": "",
+      "shiny": true,
+      "id": 42
+    },
+    {
+      "uniqueKey": 1678829064410,
+      "userId": 9,
+      "pokemonId": 1,
+      "pokemonNickName": "",
+      "shiny": false,
+      "id": 43
+    }
+  ]
+}

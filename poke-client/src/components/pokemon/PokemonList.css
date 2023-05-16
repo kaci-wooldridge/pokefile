@@ -1,0 +1,129 @@
+.pokemon-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 20px;
+    justify-content: space-evenly;
+    text-align: center;
+    color: #2f1c49;
+}
+
+.pokemon-sprite{
+    width: 200px;
+}
+
+.pokemon{
+    /* border: 3px solid #e4bfba; */
+    margin:25px;
+    padding: 5px;
+    box-shadow: #cbb9e4 6px 2px 16px 0px, #e4bad3 -6px -2px 16px 0px;
+    border-radius: 8px;
+}
+
+
+/* CSS */
+.button-85 {
+  padding: 0.3em 1em;
+  margin:6px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  background: #cbb9e4;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #e4bad3;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.searchbar{
+    border-radius: 10px;
+    border: 2px solid #916bc6;
+    width: 220px;
+    height: 20px;
+    text-align: center;
+}
+
+.barContainer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.back-to-top{
+  position: fixed;
+  top:100%;
+  left:100%;
+  width:40px;  /* adjust as per your needs */
+  height:40px;   /* adjust as per your needs */
+  margin-left:-60px;   /* negative half of width above */
+  margin-top:-60px;   /* negative half of height above */
+  background-color: #f6eaf1;
+  z-index: 1;
+}
+
+#changeName-form3{
+  position:fixed;
+  top:50%;
+  left:50%;
+  width:450px;  /* adjust as per your needs */
+  height:130px;   /* adjust as per your needs */
+  margin-left:-200px;   /* negative half of width above */
+  margin-top:-200px;   /* negative half of height above */
+  background-color: #f2f0f9;
+  z-index: 1;
+}
