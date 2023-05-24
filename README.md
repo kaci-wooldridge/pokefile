@@ -1,4 +1,4 @@
-### Pokefile
+## Pokefile
 
 Pokefile is an app I created to view all pokemon and save your favorites to your personal profile! ✨
 
@@ -11,7 +11,7 @@ Pokefile is an app I created to view all pokemon and save your favorites to your
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/) (which comes with npm) installed on your computer.
 
-## Clone the Repository
+### Clone the Repository
 
 From your command line:
 
@@ -24,14 +24,14 @@ $ cd poke-client
 ```
 
 
-## Start the Application
+### Start the Application
 
 ```bash
 # Start the application
 $ npm start
 ```
 
-## Database
+### Database
 
 Pokefile uses a JSON database to store user data. Run the following command to start the database server:
 
