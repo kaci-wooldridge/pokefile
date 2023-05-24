@@ -3,6 +3,8 @@
 Pokefile is an app I created to view all pokemon and save your favorites to your personal profile! ✨
 
 ![Alt Text](https://github.com/kaci-wooldridge/pokefile/blob/main/Screenshot%202023-05-24%20at%203.30.14%20PM.png?raw=true)
+![Alt Text](https://github.com/kaci-wooldridge/pokefile/blob/main/Screenshot%202023-05-24%20at%203.30.32%20PM.png?raw=true)
+![Alt Text](https://github.com/kaci-wooldridge/pokefile/blob/main/Screenshot%202023-05-24%20at%203.30.53%20PM.png?raw=true)
 
 
 ## Installation
