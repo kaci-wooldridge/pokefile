@@ -1,3 +1,10 @@
+##Pokefile
+
+Pokefile is an app I created to view all pokemon and save your favorites to your personal profile! ✨
+
+![Alt Text](https://github.com/kaci-wooldridge/pokefile/blob/main/Screenshot%202023-05-24%20at%203.30.14%20PM.png?raw=true)
+
+
 ## Installation
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/) (which comes with npm) installed on your computer.
